@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>رسالة تقدير</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #F5EBDD;
+    color: #0B1F3A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* card */
+.container {
+    width: 90%;
+    max-width: 700px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* step title */
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* text */
+p {
+    line-height: 2;
+    font-size: 15px;
+}
+
+/* button */
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    background: #0B1F3A;
+    color: #F5EBDD;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #C8A96A;
+    color: #0B1F3A;
+}
+
+/* steps */
+.step {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* fade */
+.fade {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- STEP 1 -->
+<div id="step1" class="step active fade">
+    <h1>💌 رسالة تقدير</h1>
+
+    <p>
+        رسالة صُنعت خصيصًا لكِ ولمجهوداتكِ المشكورة 🤍<br><br>
+
+        تقديرًا لما تقدمينه من عطاء لا يُقاس، وأثر لا يُنسى في كل يوم دراسي.
+    </p>
+
+    <button onclick="nextStep(2)">التالي</button>
+</div>
+
+<!-- STEP 2 -->
+<div id="step2" class="step fade">
+    <h1>✨ أثر عطائك</h1>
+
+    <p>
+        إن ما تقدمينه داخل الفصل ليس مجرد شرح، بل هو بناء للعقل، وصناعة للفهم، وغرس للقيم.<br><br>
+
+        كل كلمة تُقال، وكل جهد يُبذل، يتحول إلى أثر يبقى في ذاكرة الطالبات وحياتهن.
+    </p>
+
+    <button onclick="nextStep(3)">التالي</button>
+</div>
+
+<!-- STEP 3 -->
+<div id="step3" class="step fade">
+    <h1>🤍 من إبداعاتك</h1>
+
+    <p>
+        أنتِ لستِ فقط معلمة… بل مصدر إلهام.<br><br>
+
+        من صبرك، ومن طريقتك في الشرح، ومن حضورك الهادئ داخل الصف، تُصنع لحظات فهم حقيقية لا تُنسى.<br><br>
+
+        هذا هو الإبداع الحقيقي… إبداع الإنسان قبل أي تقنية.
+    </p>
+
+    <button onclick="nextStep(4)">الختام</button>
+</div>
+
+<!-- STEP 4 -->
+<div id="step4" class="step fade">
+    <h1>🤍 رسالة ختامية</h1>
+
+    <p>
+        تم توليد هذه الرسالة بواسطة الذكاء الاصطناعي 🤖<br><br>
+
+        لكنها في حقيقتها صُنعت من حبنا، ومن امتناننا، ومن تقديرنا العميق لكل ما تقدمينه من جهد لا يُنسى.<br><br>
+
+        شكرًا لكِ على كل أثر، وكل لحظة تعليم، وكل بصمة باقية.
+    </p>
+
+    <button onclick="restart()">إعادة التجربة</button>
+</div>
+
+</div>
+
+<script>
+function nextStep(step) {
+
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById("step" + i).classList.remove("active");
+    }
+
+    document.getElementById("step" + step).classList.add("active");
+}
+
+function restart() {
+    nextStep(1);
+}
+</script>
+
+</body>
+</html>
